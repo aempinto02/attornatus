@@ -6,7 +6,11 @@ Este é um exemplo de API construída com Java / Maven / Spring Boot (version 3.
 
 Esta aplicação por usar Spring Boot já traz o servidor embutido. Nada de Tomcat ou JBoss é necessário instalar. Primeiro se cria os arquivos .jar com o comando estando na pasta raiz do projeto onde se vê o arquivo 'pom.xml':
 
+- Clone este repositório
+- Garanta que está usando JDK 17, Maven 3.8.x e Spring Boot 3.0.x
+
 1. ```mvn clean install```
+* Também é possível buildar usando o comando: ```mvn clean package```
 
 Entra na pasta 'target':
 
@@ -16,11 +20,8 @@ Executa a aplicação com servidor embutido:
 
 3. ```java -jar attornatus-0.0.1-SNAPSHOT.jar```
 
-* Clone este repositório
-* Garanta que está usando JDK 17, Maven 3.8.x e Spring Boot 3.0.x
-* Também é possível buildar usando o comando: ```mvn clean package```
 
-* Ver o stdout ou o arquivo boot_example.log para ter certeza das exceções
+- Ver o stdout ou o arquivo boot_example.log para ter certeza das exceções
 
 Quando a aplicação estiver corretamente configurada e inicializada aparecerá no console algo assim:
 
@@ -33,11 +34,11 @@ Quando a aplicação estiver corretamente configurada e inicializada aparecerá 
 
 O serviço está implementado utilizando token JWT para as requisições dos endpoints. O fluxo da aplicação exige registro para pegar um token que possa fazer as demais requisições. O serviço tem apenas duas entidades mapeadas em REST, que é 'Pessoa' e 'Endereço'. O projeto assume o inglês como linguagem de desenvolvimento. Está sendo usado um banco em memória (H2) para armazenamento dos registros, porém o cuidado de lembrar que caso a aplicação seja reiniciada, por ser em memória, todos os dados são perdidos. Porém a adaptação é fácil para um MySQL ou PostgreSQL (em Docker ou não). Com o banco funcionando é possível chamar os endpoints de:
 
-```**br.com.attornatus.controller.AddressController**```
+**```br.com.attornatus.controller.AddressController```**
 
 E
 
-```**br.com.attornatus.controller.PersonController**```
+**```br.com.attornatus.controller.PersonController```**
 
 ## Postman
 
