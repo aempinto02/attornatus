@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "62899c4f-8616-40ec-873a-ac6ee03881cd",
+		"name": "Attornatus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17542616"
+	},
+	"item": [
+		{
+			"name": "Person",
+			"item": [
+				{
+					"name": "Find all persons",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZUBnbWFpbC5jb20iLCJpYXQiOjE2Nzc0NDMzNjQsImV4cCI6MTY3NzQ0NDgwNH0.aJpo0Olb_Gp8_-tkh9esKIdWLkf_iCqsgfei5FAI6aI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by document",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZUBnbWFpbC5jb20iLCJpYXQiOjE2Nzc0Mzg5NjAsImV4cCI6MTY3NzQ0MDQwMH0.Q06TmONiWKVZ0Yks7NY-xnTSA2qfk5ZNcyhchn_OEEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person?document=358.644.828-70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person"
+							],
+							"query": [
+								{
+									"key": "document",
+									"value": "358.644.828-70"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save person",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZUBnbWFpbC5jb20iLCJpYXQiOjE2Nzc0NDcxNzMsImV4cCI6MTY3NzQ0ODYxM30.P8YKzJDbKa1uLUwd1cyds-SMlaOlWdFcX6Bq0N6f-ys",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Padrão\",\n    \"birthday\": \"24/03/2010\",\n    \"document\": \"358.644.828-70\",\n    \"address\": [\n        {\n            \"publicPlace\": \"Rua Catanduva, 102\",\n            \"postalCode\": \"01201-231\",\n            \"number\": \"19\",\n            \"city\": \"Alvernoz\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update person",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZUBnbWFpbC5jb20iLCJpYXQiOjE2Nzc0Mzk5MjksImV4cCI6MTY3NzQ0MTM2OX0.Tr6z6MPRO_xeoAt8UroCbLw-rRUUV816SBi5k4Togt4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Cavunda\",\n    \"birthday\": \"24/03/2010\",\n    \"document\": \"358.644.838-42\",\n    \"address\": [\n        {\n            \"publicPlace\": \"Rua Catanduva, 102\",\n            \"postalCode\": \"01201-231\",\n            \"number\": \"19\",\n            \"city\": \"Alvernoz\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/person?document=358.644.828-70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person"
+							],
+							"query": [
+								{
+									"key": "document",
+									"value": "358.644.828-70"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer a",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"André\",\n    \"lastname\": \"Pinto\",\n    \"email\": \"teste@gmail.com\",\n    \"password\": \"Andre123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer a",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"teste@gmail.com\",\n    \"password\": \"Andre123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "Find all addresses by person",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZUBnbWFpbC5jb20iLCJpYXQiOjE2Nzc0NDcxNzMsImV4cCI6MTY3NzQ0ODYxM30.P8YKzJDbKa1uLUwd1cyds-SMlaOlWdFcX6Bq0N6f-ys",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/address?document=358.644.828-70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address"
+							],
+							"query": [
+								{
+									"key": "document",
+									"value": "358.644.828-70"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find main address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZUBnbWFpbC5jb20iLCJpYXQiOjE2Nzc0NDY5NDgsImV4cCI6MTY3NzQ0ODM4OH0.iOE-w77TZbr38ku30Uj6RmX-BYCRWnkimiFw0bMcAkI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/address/main?document=358.644.828-70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"main"
+							],
+							"query": [
+								{
+									"key": "document",
+									"value": "358.644.828-70"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create address to person",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZUBnbWFpbC5jb20iLCJpYXQiOjE2Nzc0NDcxNzMsImV4cCI6MTY3NzQ0ODYxM30.P8YKzJDbKa1uLUwd1cyds-SMlaOlWdFcX6Bq0N6f-ys",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"publicPlace\": \"Rua Vaselina, 069\",\n    \"postalCode\": \"23661-554\",\n    \"number\": \"514\",\n    \"city\": \"Curvina\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/address?document=358.644.828-70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address"
+							],
+							"query": [
+								{
+									"key": "document",
+									"value": "358.644.828-70"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update main address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZUBnbWFpbC5jb20iLCJpYXQiOjE2Nzc0NDY5NDgsImV4cCI6MTY3NzQ0ODM4OH0.iOE-w77TZbr38ku30Uj6RmX-BYCRWnkimiFw0bMcAkI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/address/4?document=358.644.828-70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"4"
+							],
+							"query": [
+								{
+									"key": "document",
+									"value": "358.644.828-70"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
