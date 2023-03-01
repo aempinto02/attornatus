@@ -9,9 +9,11 @@ Esta aplicação por usar Spring Boot já traz o servidor embutido. Nada de Tomc
 1. ```mvn clean install```
 
 Entra na pasta 'target':
+
 2. ```cd target```
 
 Executa a aplicação com servidor embutido:
+
 3. ```java -jar attornatus-0.0.1-SNAPSHOT.jar```
 
 * Clone este repositório
@@ -31,11 +33,11 @@ Quando a aplicação estiver corretamente configurada e inicializada aparecerá 
 
 O serviço está implementado utilizando token JWT para as requisições dos endpoints. O fluxo da aplicação exige registro para pegar um token que possa fazer as demais requisições. O serviço tem apenas duas entidades mapeadas em REST, que é 'Pessoa' e 'Endereço'. O projeto assume o inglês como linguagem de desenvolvimento. Está sendo usado um banco em memória (H2) para armazenamento dos registros, porém o cuidado de lembrar que caso a aplicação seja reiniciada, por ser em memória, todos os dados são perdidos. Porém a adaptação é fácil para um MySQL ou PostgreSQL (em Docker ou não). Com o banco funcionando é possível chamar os endpoints de:
 
-**br.com.attornatus.controller.AddressController**
+```**br.com.attornatus.controller.AddressController**```
 
 E
 
-**br.com.attornatus.controller.PersController**
+```**br.com.attornatus.controller.PersonController**```
 
 ## Postman
 
@@ -82,14 +84,14 @@ Apenas os testes unitários foram realizados com cobertura integral por linhas e
 
 **Não** foram feitos testes de integração.
 
-### Documentação Swagger
+## Documentação Swagger
 
 Com a aplicação funcionando acessar:
 
 http://localhost:8080/swagger-ui/index.html
 
 
-### Arquivo application.properties: 
+## Arquivo application.properties: 
 
 O arquivo application.properties contém algumas configurações para a aplicação Spring.
 
